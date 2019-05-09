@@ -7,6 +7,6 @@ export default class WorkoutForm extends Component {
       <View>
         <Text> textInComponent </Text>
       </View>
-    )
+    );
   }
 }
