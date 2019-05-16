@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, FlatList, AsyncStorage } from 'react-native';
+import { ActionButton, ListItem, Divider } from 'react-native-material-ui';
 
 class WorkoutList extends Component {
   static navigationOptions = {
@@ -35,9 +36,10 @@ class WorkoutList extends Component {
       <View>
         <FlatList
           data={this.state.data}
-          renderItem={({item}) => <Text>{item}</Text>}
+          renderItem={({item}) => (<><ListItem centerElement={item}/><Divider/></>)}
           keyExtractor={(item, index) => `${index}`}
         />
+        <ActionButton onPress= {() => navigate('WorkoutForm') } />
       </View>
     )
   }
